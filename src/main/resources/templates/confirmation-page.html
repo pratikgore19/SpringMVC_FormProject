@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Confirmation Page</title>
+	<!-- Bootstrap CSS CDN -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		/* Full page background with a gradient */
+		body {
+			background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+			font-family: 'Arial', sans-serif;
+			height: 100vh;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		/* Confirmation card styling */
+		.confirmation-card {
+			background-color: white;
+			border-radius: 10px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			padding: 40px;
+			max-width: 450px;
+			text-align: center;
+		}
+
+		/* Typography */
+		.confirmation-card h1 {
+			font-size: 28px;
+			font-weight: 600;
+			color: #333;
+			margin-bottom: 20px;
+		}
+
+		.confirmation-card p {
+			font-size: 16px;
+			color: #666;
+			margin-bottom: 30px;
+		}
+
+		/* Button styling */
+		.btn-custom {
+			background-color: #74ebd5;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			font-size: 16px;
+			border-radius: 50px;
+			transition: background-color 0.3s ease;
+		}
+
+		.btn-custom:hover {
+			background-color: #ACB6E5;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="confirmation-card">
+		<h1 th:text="'Success!'"></h1>
+		<p th:text="'Thank you for submitting the form. Your submission was successful.'"></p>
+
+		<!-- You can display dynamic data like student's name or ID -->
+		<p th:text="'Student has been registered: '"></p>
+		<p th:text="' Name: '+${mystudent.firstName}+' '+${mystudent.lastName} "></p>
+		<p th:text="' PAN: '+${mystudent.panNumber} "></p>
+		<p th:text="' Stream: '+${mystudent.stream} "></p>
+		<p th:text="' Gender: '+${mystudent.gender} "></p>
+		<p th:text="' Programing Language: '+${mystudent.programmingLanguage} "></p>
+		<p th:text="' Skill Rating: '+${mystudent.rating} "></p>
+		<p th:text="' Registered Course: '+${mystudent.courseCode} "></p>
+		<!-- Back to homepage button -->
+		<a href="/welcome" class="btn btn-custom">Go to Homepage</a>
+	</div>
+
+	<!-- Bootstrap JS and Popper.js -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
